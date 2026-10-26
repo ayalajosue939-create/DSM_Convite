@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "501134440327",
+    "firebase_url": "https://convite-eb5e6-default-rtdb.firebaseio.com",
+    "project_id": "convite-eb5e6",
+    "storage_bucket": "convite-eb5e6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501134440327:android:d7e19178dd2fe422c3c522",
+        "android_client_info": {
+          "package_name": "com.udb.convite"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIHXUxVMD_qXaasCCRZSCljdC2ADOvA5w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

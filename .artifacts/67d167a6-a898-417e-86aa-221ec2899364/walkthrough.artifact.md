@@ -1,36 +1,26 @@
-# Walkthrough - Convite Development
+# Walkthrough - Enhanced Calendar & Multiple Reminders in Convite
 
-Hemos desarrollado con éxito **Convite**, la aplicación móvil nativa para Android construida con Kotlin, Jetpack Compose y Firebase (Auth y Realtime Database).
+Hemos mejorado significativamente la funcionalidad del calendario y los recordatorios en **Convite**:
 
-## Cambios Realizados
+## Mejoras Implementadas
 
-### 🎨 Diseño y Tema Visual
-- **Paleta de Colores:** Implementación exacta de la identidad visual de Convite:
-  - Primario Berenjena / Berry (`#A32D5E`) para encabezados, marca y acciones principales.
-  - Secundario Verde Azulado (`#1B5E56`) para la pantalla de detalle de eventos.
-  - Acentos Marigold (`#E8A33D`) para recordatorios y distintivos de fecha, y Coral (`#F2765F`) para alertas y botones flotantes.
-- **Tipografía y Estética:** Diseño editorial inspirado en la papelería festiva latinoamericana.
+### 📅 Calendario Interactivo y Dinámico (`CalendarScreen.kt`)
+- **Cuadrícula Mensual Automática:** Visualización automática de los días de cada mes con navegación fluida entre meses y años.
+- **Indicadores de Eventos:** Los días con actividades programadas muestran un distintivo visual (punto/marcador) y resaltado.
+- **Consulta por Día:** Al seleccionar cualquier fecha en el calendario, la aplicación muestra instantáneamente todos los eventos programados para ese día (nombre, hora, ubicación, descripción) con navegación directa al detalle.
 
-### 🔐 Autenticación de Firebase (`AuthScreen.kt`)
-- Pantalla de inicio de sesión y registro adaptada al diseño de Convite con encabezado Berry, campos limpios y sincronización con Firebase Authentication.
+### ⏰ Selectores Interactivos de Fecha y Hora (`CreateEventScreen.kt`)
+- Integración de selectores nativos (`DatePickerDialog` y `TimePickerDialog`) al crear eventos, eliminando la necesidad de introducción manual.
 
-### 🏠 Pantalla de Inicio / Próximos Eventos (`HomeScreen.kt`)
-- Lista de eventos agrupados por fecha ("Esta semana", "Próximamente").
-- Distintivo circular de día/mes con borde marigold y texto berry.
-- Barra de búsqueda superior, botón flotante de acción (`+`) para crear eventos y barra de navegación inferior (Inicio, Calendario, Recordatorios, Perfil).
-
-### 📝 Crear Evento (`CreateEventScreen.kt`)
-- Formulario completo con título, fecha, hora, ubicación, descripción, selector de categorías mediante chips (`Cumpleaños`, `XV años`, `Boda`, `Bautizo`, `Graduación`), configuración de recordatorio y botón de guardado en Firebase Realtime Database.
-
-### 🔎 Detalle del Evento (`EventDetailScreen.kt`)
-- Encabezado Verde Azulado (`#1B5E56`), visualización completa de datos, tarjeta con interruptor para activar/desactivar recordatorios y botones de edición y eliminación.
-
-### 🔔 Recordatorios (`RemindersScreen.kt`)
-- Panel independiente agrupado por fecha con cabecera Marigold y avisos organizados.
-
-### 📅 Calendario & Perfil (`CalendarScreen.kt`, `ProfileScreen.kt`)
-- Vistas dedicadas de calendario y perfil con opción de cierre de sesión.
+### 🔔 Recordatorios de Selección Múltiple
+- **Opciones Múltiples:** Los usuarios ahora pueden seleccionar múltiples avisos para un mismo evento:
+  - 5 minutos antes
+  - 10 minutos antes
+  - 15 minutos antes
+  - 30 minutos antes
+  - 1 hora antes
+  - 1 día antes
+- **Sincronización Inmediata:** Actualización automática en tiempo real mediante Firebase Realtime Database reflejada en el calendario, inicio y pantalla de recordatorios.
 
 ## Verificación y Pruebas
-- **Compilación Exitosa:** El proyecto compila correctamente con Gradle (`app:assembleDebug`).
-- **Sincronización en Tiempo Real:** Todos los eventos se sincronizan mediante Firebase Realtime Database.
+- **Compilación Exitosa:** El proyecto compila correctamente (`app:assembleDebug`).

@@ -108,7 +108,7 @@ fun RemindersScreen(
             item {
                 Spacer(modifier = Modifier.height(16.dp))
                 Text(
-                    text = "Esta Semana",
+                    text = "Avisos Programados",
                     fontFamily = FontFamily.Serif,
                     fontWeight = FontWeight.Bold,
                     fontSize = 18.sp,
@@ -156,14 +156,16 @@ fun ReminderCard(event: EventModel) {
         colors = CardDefaults.cardColors(containerColor = CardSurface),
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
     ) {
-        Row(
+        Column(
             modifier = Modifier
                 .padding(16.dp)
-                .fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically
+                .fillMaxWidth()
         ) {
-            Column(modifier = Modifier.weight(1f)) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
                 Text(
                     text = event.title,
                     fontFamily = FontFamily.Serif,
@@ -171,25 +173,20 @@ fun ReminderCard(event: EventModel) {
                     fontSize = 16.sp,
                     color = TextDark
                 )
-                Spacer(modifier = Modifier.height(2.dp))
                 Text(
-                    text = event.description.ifEmpty { "Recordatorio de ${event.category}" },
+                    text = event.date,
                     fontSize = 13.sp,
-                    color = TextMuted
-                )
-            }
-            Surface(
-                color = Color(0xFFF7F2EC),
-                shape = RoundedCornerShape(12.dp)
-            ) {
-                Text(
-                    text = event.time.ifEmpty { "9:00am" },
-                    fontSize = 12.sp,
                     fontWeight = FontWeight.Bold,
-                    color = TextDark,
-                    modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp)
+                    color = BerryPrimary
                 )
             }
+            Spacer(modifier = Modifier.height(6.dp))
+            val remindersText = if (event.reminders.isNotEmpty()) event.reminders.joinToString(" • ") else event.reminderTime
+            Text(
+                text = "🔔 $remindersText",
+                fontSize = 13.sp,
+                color = TextMuted
+            )
         }
     }
 }

@@ -10,6 +10,7 @@ data class EventModel(
     val description: String = "",
     val category: String = "Cumpleaños",
     val reminderTime: String = "1 día antes | 9:00am",
+    val reminders: List<String> = emptyList(),
     val imageUrl: String = "",
     val reminderActive: Boolean = true,
     val groupTag: String = "Esta semana"

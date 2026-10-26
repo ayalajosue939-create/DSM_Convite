@@ -70,7 +70,8 @@ fun ConviteNavGraph() {
                     navController.navigate("home") { popUpTo("home") { inclusive = true } }
                 },
                 onNavigateReminders = { navController.navigate("reminders") },
-                onNavigateProfile = { navController.navigate("profile") }
+                onNavigateProfile = { navController.navigate("profile") },
+                onNavigateToDetail = { eventId -> navController.navigate("event_detail/$eventId") }
             )
         }
         composable("profile") {

@@ -180,14 +180,15 @@ fun EventDetailScreen(
                     ) {
                         Column {
                             Text(
-                                text = if (reminderActive) "Recordatorio activo" else "Recordatorio inactivo",
+                                text = if (reminderActive) "Recordatorios activos" else "Recordatorios inactivos",
                                 fontWeight = FontWeight.Bold,
                                 fontSize = 15.sp,
                                 color = CoralAccent
                             )
                             Spacer(modifier = Modifier.height(2.dp))
+                            val remindersSummary = if (currentEvent.reminders.isNotEmpty()) currentEvent.reminders.joinToString(" • ") else currentEvent.reminderTime
                             Text(
-                                text = currentEvent.reminderTime,
+                                text = remindersSummary,
                                 fontSize = 13.sp,
                                 color = TextMuted
                             )

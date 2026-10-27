@@ -12,7 +12,7 @@ Proyecto de cátedra de **Desarrollo de Software para Móviles** — Universidad
 | Adriana Eunice Flores Hernández | FH190090 |
 | Francisco Andrés Alas Vásquez | AV250078 |
 | Emanuel Ronaldo Monroy Paz | MP252018 |
-
+| Bryan Anderson Crespín Ramos| CR241106|
 ## Documentación
 
 - **Manual de usuario:** [Carpeta de manuales en Google Drive](https://drive.google.com/drive/folders/1WgiBvtBehI2rpKbYU1YEaaSXqofYF4cU?usp=sharing)
